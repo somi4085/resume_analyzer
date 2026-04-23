@@ -10,7 +10,7 @@ SKILL_DB = [
 
 def extract_skills(text):
     text_lower = text.lower()
-    extracted_skills = []   # ✅ moved inside function
+    extracted_skills = []   
 
     for skill in SKILL_DB:
         if skill in text_lower:
