@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+streamlit
+scikit-learn
+spacy
+PyPDF2
+transformers
+torch
+requests
