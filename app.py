@@ -12,7 +12,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Resume Analyzer Running 🚀"}
+    return {"message": "Resume Analyzer Running"}
 
 
 @app.post("/analyze")
@@ -40,9 +40,9 @@ async def analyze(file: UploadFile = File(...), jd: str = Form(...)):
     suggestions = generator_summarizer(resume_text)
 
     return {
-        "match_score": match_score,   # ✅ FIXED
-        "resume_skills": resume_skills,   # ✅ FIXED
-        "jd_skills": jd_skills,           # ✅ FIXED
+        "match_score": match_score,   
+        "resume_skills": resume_skills,   
+        "jd_skills": jd_skills,           
         "missing_skills": missing_skills,
         "suggestions": suggestions
     }
