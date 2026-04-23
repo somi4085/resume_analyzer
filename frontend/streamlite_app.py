@@ -1,13 +1,12 @@
 import streamlit as st
 import requests
 
-# API endpoint
 API_URL = "http://127.0.0.1:8000/analyze"
 
 st.set_page_config(page_title="Resume Analyzer", layout="centered")
 
 st.title("📄 AI Resume Analyzer")
-st.write("Upload your resume and get insights 🚀")
+st.write("Upload your resume and get insights")
 
 # Upload resume
 resume_file = st.file_uploader("Upload Resume (PDF)", type=["pdf"])
@@ -28,8 +27,8 @@ if st.button("Analyze Resume"):
         if response.status_code == 200:
             result = response.json()
 
-            # 🎯 Display Results
-            st.success("Analysis Complete ✅")
+            #Display Results
+            st.success("Analysis Complete ")
 
             # Match Score
             st.subheader("📊 Match Score")
@@ -38,12 +37,12 @@ if st.button("Analyze Resume"):
             st.write(f"score: {score}%")
 
             # Skills
-            st.subheader("🧠 Skills")
+            st.subheader("Skills")
             st.write("**Resume Skills:**", result["resume_skills"])
             st.write("**JD Skills:**", result["jd_skills"])
 
             # Missing Skills
-            st.subheader("⚠️ Missing Skills")
+            st.subheader("Missing Skills")
             st.write(result["missing_skills"])
 
             # AI Suggestions
@@ -51,7 +50,7 @@ if st.button("Analyze Resume"):
             st.write(result["suggestions"])
 
         else:
-            st.error("Something went wrong ❌")
+            st.error("Something went wrong ")
 
     else:
         st.warning("Please upload resume and enter job description")
